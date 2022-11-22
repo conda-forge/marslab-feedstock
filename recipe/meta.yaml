@@ -1,5 +1,5 @@
 {% set name = "marslab" %}
-{% set version = "0.9.10" %}
+{% set version = "0.9.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz
-  sha256: 2b4bd12019b307f22e691f3f3743d17846c7da76d65592a15b5c2f210937c42a
+  sha256: c12d084ee38a0e1cbe01a63e0553f2490781a91a3ab4def9bd176f799b7225f1
 
 build:
   noarch: python
@@ -20,34 +20,37 @@ requirements:
     - pip
   run:
     - python >=3.9
-    - astropy
-    - clize
-    - cytoolz
+    - numpy
+    - scipy
     - dustgoggles
     - fs
-    - matplotlib-base
-    - more-itertools
-    - numpy
+    - clize
     - pandas
+    - more-itertools
     - pathos
-    - pdr
-    - python-dateutil
+    - cytoolz
+    - matplotlib-base
     - python-Levenshtein
-    - scipy
+    - python-dateutil
+    - pdr
+    - astropy
     - sympy
+    - fast-histogram
+    - scikit-image
+    - opencv
 
 test:
   imports:
     - marslab
   commands:
-    # removed pip check due to discrepancies with clize metadata in PyPI vs conda-forge
+     # removed pip check due to discrepancies with clize metadata in PyPI vs conda-forge
   requires:
     - pip
 
 about:
-  home: https://github.com/millionconcepts/marslab
+  home: https://github.com/millionconcepts/marslab.git
   summary: Utilities for working with observational data of Mars.
-  description: | 
+  description: |
     marslab is the core support library for the marslab ecosystem (https://github.com/MillionConcepts/marslab-reference).
     It defines common formats, shared references, and support objects, many of which are also useful on their own.
     Highlights include Look, a lightweight construction kit for multispectral visualizations;
@@ -58,3 +61,5 @@ about:
 extra:
   recipe-maintainers:
     - Sierra-MC
+    - m-stclair
+    
