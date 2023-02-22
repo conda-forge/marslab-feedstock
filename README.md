@@ -150,4 +150,5 @@ Feedstock Maintainers
 =====================
 
 * [@Sierra-MC](https://github.com/Sierra-MC/)
+* [@m-stclair](https://github.com/m-stclair/)
 
