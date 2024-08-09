@@ -14,30 +14,31 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
-name: marslab
-channels:
-  - conda-forge
-dependencies:
-  - python>=3.9
-  - astropy
-  - cytoolz
-  - dustgoggles
-  - fast-histogram
-  - matplotlib
-  - more-itertools
-  - numpy
-  - opencv
-  - pandas
-  - pathos
-  - pdr
-  - pip
-  - python-dateutil
-  - scikit-image
-  - scipy
-  - sympy
-  # optional dependencies for testing, included by default
-  - pytest
-  - hypothesis
+requirements:
+  host:
+    - python >=3.9
+    - pip
+  run:
+    - python>=3.9
+    - astropy
+    - cytoolz
+    - dustgoggles
+    - fast-histogram
+    - matplotlib
+    - more-itertools
+    - numpy
+    - opencv
+    - pandas
+    - pathos
+    - pdr
+    - pip
+    - python-dateutil
+    - scikit-image
+    - scipy
+    - sympy
+    # optional dependencies for testing, included by default
+    - pytest
+    - hypothesis
 
 test:
   imports:
