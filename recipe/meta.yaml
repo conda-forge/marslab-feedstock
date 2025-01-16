@@ -1,13 +1,14 @@
 {% set name = "marslab" %}
-{% set version = "0.9.22" %}
+{% set version = "0.9.23" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz
-  sha256: b911400cb011e19fd66685f2afc49bb6e4a03c0d60f40261dd8f411d77f829b4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz
+  sha256: 39b1c974671ef476650189c95cfbd2a600a928a3e281294d27948e1f5c643e3a
 
 build:
   noarch: python
@@ -16,11 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.9
-    - astropy
+    - python >={{ python_min }}
+    - astropy-base
     - cytoolz
     - dustgoggles
     - fast-histogram
@@ -47,6 +49,7 @@ test:
     - pip check
   requires:
     - pip
+    - setuptools
 
 about:
   home: https://github.com/millionconcepts/marslab
