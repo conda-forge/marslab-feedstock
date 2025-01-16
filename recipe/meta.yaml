@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.9
-    - astropy
+    - python >={{ python_min }}
+    - astropy-base
     - cytoolz
     - dustgoggles
     - fast-histogram
@@ -47,6 +48,7 @@ test:
     - pip check
   requires:
     - pip
+    - setuptools
 
 about:
   home: https://github.com/millionconcepts/marslab
