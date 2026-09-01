@@ -1,5 +1,5 @@
 {% set name = "marslab" %}
-{% set version = "0.9.26" %}
+{% set version = "0.9.27" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz
-  sha256: 32d0a9804dcc5fe72853dc2f66cc1c404dd634b55b5e47a2b7f19bbcd785f156
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz
+  sha256: a2b8c946ac1d3441c74d3fe02ef4cd577a12a24196b9abaadd14bede26ab2387
 
 build:
   noarch: python
